@@ -46,6 +46,7 @@ public class Interpreter {
 					curLine = curLine.substring(1);
 				}
 			}
+			scLine.close();
 		} catch (Exception e) {
 			System.out.println("something got (brain-)fucked up");
 		}
