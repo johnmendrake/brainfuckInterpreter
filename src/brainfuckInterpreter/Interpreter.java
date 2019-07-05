@@ -17,33 +17,32 @@ public class Interpreter {
 			while (scLine.hasNext()) {
 				String curLine = scLine.next();
 				System.out.println(curLine);
-				while (curLine.length() > 0) {
-					switch (curLine.substring(0, 1)) {
-					case "<":
+				for (int i = 0; i < curLine.length(); i++) {
+					switch (curLine.charAt(i)) {
+					case '<':
 						decIndex();
 						break;
-					case ">":
+					case '>':
 						incIndex();
 						break;
-					case "+":
+					case '+':
 						incIndexValue();
 						break;
-					case "-":
+					case '-':
 						decIndexValue();
 						break;
-					case "[":
+					case '[':
 						break;
-					case "]":
+					case ']':
 						break;
-					case ",":
+					case ',':
 						break;
-					case ".":
+					case '.':
 						printAsciiChar();
 						break;
 					default:
 						break;
 					}
-					curLine = curLine.substring(1);
 				}
 			}
 			scLine.close();
